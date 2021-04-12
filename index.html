@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrelloBoard ZeCodeCrew</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <h1>This Week's CodeCrew Projects</h1>
+<body>
+    <div id="BoardTitle">
+        <h1 contenteditable="true">Job Name</h1>
+        <input type="text" id="titleInput"><button onclick="SetTitle(this)">click</button>
+    </div>
+
+    <div id="body" >
+
+        <div id="list of categories">
+            <div>
+                <h2 contenteditable="true">ToDos</h2>
+                <div id="enter list title"></div>
+                <input id="todo input">
+            </div>
+
+        </div>
+
+        <div>
+
+            <h2>Create Another Category</h2>
+            <input id="category input" type="text" placeholder="type your category name">
+        </div>
+    </div>
+    
+</body>
+
+<script src="script.js"></script>
+</html>
