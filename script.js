@@ -7,7 +7,7 @@ let listOfCategories = document.getElementById("list of categories");
 
 function SetTitle(button)
 {
-    document.getElementById("body").style.display = "initial";
+    document.getElementById("body").style.display = "flex"; //setting title of trelloboard
     title.querySelector("h1").innerHTML = titleInput.value;
     titleInput.value = (""); //erases text typed in input box
 
@@ -15,7 +15,7 @@ function SetTitle(button)
     button.style.display = "none";
 }
 
-todoInput.addEventListener("change", () =>
+todoInput.addEventListener("change", () => //add things to the first 'todos' list only
     {
         let p = document.createElement("p");
         p.innerHTML = todoInput.value;
@@ -24,7 +24,7 @@ todoInput.addEventListener("change", () =>
         todoInput.value = ("");
     })
 
-    categoryInput.addEventListener("change", () =>
+    categoryInput.addEventListener("change", () => // new custom categories as added by user
     {
         let card = document.createElement("div");
         let title = document.createElement("h2");
@@ -32,7 +32,7 @@ todoInput.addEventListener("change", () =>
         let div = document.createElement("div");
         let input = document.createElement("input");
 
-        input.addEventListener("change", ()=>{
+        input.addEventListener("change", ()=>{ //inputs added to a new custom category
             let p = document.createElement("p");
             p.innerHTML = input.value;
             p.setAttribute("contentEditable", "true");
@@ -40,10 +40,11 @@ todoInput.addEventListener("change", () =>
             input.value = ("");
         })
 
-        title.innerHTML = categoryInput.value;
+        title.innerHTML = categoryInput.value; //after creating new custom category give its card a title
         categoryInput.value = ("");
+        card.classList.add("cardcategory") //ads class when creating a new card category
 
-        card.appendChild(title);
+        card.appendChild(title); //appending makes the new card show on the screen - create element then append to make it appear
         card.appendChild(div);
         card.appendChild(input);
         listOfCategories.append(card);
